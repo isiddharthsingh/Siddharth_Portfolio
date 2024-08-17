@@ -36,9 +36,9 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="https://isiddharthsingh.netlify.app/project" element={<Projects />} />
-          <Route path="https://isiddharthsingh.netlify.app/about" element={<About />} />
-          <Route path="https://isiddharthsingh.netlify.app/resume" element={<Resume />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />
