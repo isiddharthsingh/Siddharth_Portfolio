@@ -9,7 +9,7 @@ import ecostock from "../../Assets/Projects/ecostock.webp";
 import shems from "../../Assets/Projects/shems.webp";
 import taleweaver from "../../Assets/Projects/taleweaver.webp";
 import dine from "../../Assets/Projects/dine.webp";
-import typeninja from "../../Assets/Projects/typeninja.webp";
+import typeninja from "../../Assets/Projects/typeninja.png";
 
 function Projects() {
   return (
@@ -39,7 +39,7 @@ function Projects() {
               isBlog={false}
               title={<span className="purple">TypeNinja</span>}
               description="This typing game offers a dynamic experience by randomly selecting one of 20 sentences for users to type, ensuring variety with each playthrough. It provides real-time tracking of typing time, accuracy, and words per minute (WPM), allowing users to monitor their performance instantly. To increase the challenge, the game disables the backspace key, promoting focused and accurate typing. The interface is clean, modern, and responsive, making it suitable for various devices. With a simple setup and easy-to-use design, the game is accessible to users of all skill levels."
-              ghLink="https://github.com/isiddharthsingh/LlamaLingo"
+              ghLink="https://github.com/isiddharthsingh/TypeNinja"
             />
           </Col>
 
