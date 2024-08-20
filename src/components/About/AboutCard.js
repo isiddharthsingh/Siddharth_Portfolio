@@ -31,9 +31,9 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "It's great to Desire but you have to Deserve to Desire"{" "}
+            "When you really want something, all the universe conspires in helping you to achieve it."{" "}
           </p>
-          <footer className="blockquote-footer">A wise man</footer>
+          <footer className="blockquote-footer">Paulo Coelho</footer>
         </blockquote>
       </Card.Body>
     </Card>
