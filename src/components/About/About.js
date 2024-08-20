@@ -26,7 +26,6 @@ function About() {
               Know Who <strong className="purple">I'M</strong>
             </h1>
             <Aboutcard />
-              {/* Including the ExperienceCard component */}
           </Col>
           <Col
             md={5}
@@ -37,7 +36,7 @@ function About() {
           </Col>
         </Row>
         <Row>
-        <ExperienceCard />
+          <ExperienceCard /> {/* Including the ExperienceCard component */}
         </Row>
         <h1 className="project-heading">
           Professional <strong className="purple">Skillset </strong>
