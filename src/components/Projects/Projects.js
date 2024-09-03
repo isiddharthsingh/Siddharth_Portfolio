@@ -10,6 +10,7 @@ import shems from "../../Assets/Projects/shems.webp";
 import taleweaver from "../../Assets/Projects/taleweaver.webp";
 import dine from "../../Assets/Projects/dine.webp";
 import typeninja from "../../Assets/Projects/typeninja.png";
+import GPT from "../../Assets/Projects/GPT.png";
 
 function Projects() {
   return (
@@ -23,6 +24,16 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={GPT}
+              isBlog={false}
+              title={<span className="purple">GPT: Transformer-Based Character-Level Language Model</span>}
+              description="I developed and implemented a character-level language model from scratch, inspired by the Transformer architecture introduced in the seminal paper 'Attention is All You Need.' This model leverages self-attention mechanisms to predict the next character in a sequence, capturing both short-term and long-term dependencies within text. Key features include multi-head attention, positional encoding, and the ability to generate coherent text sequences based on learned patterns. The model was implemented using PyTorch and optimized for GPU acceleration, making it a powerful tool for understanding and generating text at a granular level."
+              ghLink="https://github.com/isiddharthsingh/GPT_Transformer"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={llamalingo}
