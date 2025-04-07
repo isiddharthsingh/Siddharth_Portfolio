@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { HelmetProvider } from 'react-helmet-async';
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
@@ -6,6 +7,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+import SEO from "./components/SEO/SEO";
 import {
   BrowserRouter as Router,
   Route,
@@ -29,21 +31,29 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <Preloader load={load} />
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+          <SEO
+            title="Siddharth Singh - Lead Developer | Full Stack Engineer"
+            description="Lead Developer at FuteurAI and Web Developer at NYU. Experienced in React, Java, and Cloud Technologies with a proven track record of improving system performance and user engagement."
+            name="Siddharth Singh"
+            type="profile"
+          />
+          <Navbar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<Navigate to="/"/>} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 
