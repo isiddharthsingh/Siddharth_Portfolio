@@ -64,13 +64,17 @@ function ExperienceCard() {
             }}
           >
             <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Leading development initiatives and technical strategy for AI-driven applications.
+              <ImPointRight style={iconStyle} /> Architected microservices application with Next.js and CI/CD pipelines, delivering 40% performance gains and 75% fewer deployment failures while implementing Clerk OAuth for 65% faster sign-ups
             </li>
             <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Collaborating with cross-functional teams to deliver innovative solutions.
+              <ImPointRight style={iconStyle} /> Led security innovation for FuteurSecure by implementing post-quantum cryptography (CRYSTALS-Kyber/Dilithium) and building a system for plug-and-play integration with any database, achieving 100% NIST compliance, 85% vulnerability reduction, and 99.9% data protection in transit and at rest.
             </li>
             <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Implementing best practices for code quality and performance optimization.
+              <ImPointRight style={iconStyle} /> Developed enterprise-grade security monitoring platform that integrates OSSEC HIDS, Wazuh and Suricata IDS/IPS, reducing false positives by 60% and increasing the accuracy of threat detection by 45%.
+            </li>
+            <li style={listItemStyle}>
+              <ImPointRight style={iconStyle} /> Engineered distributed logging system using Hyperledger Fabric blockchain infrastructure with analytics dashboards,
+              increasing customer retention by more than 70% through data-driven user engagement insights
             </li>
           </ul>
         </div>
