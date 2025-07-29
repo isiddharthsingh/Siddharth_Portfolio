@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
+import { Container } from "react-bootstrap";
 import { motion, AnimatePresence } from "framer-motion";
-import { BsSearch, BsFilter, BsGrid3X3Gap, BsList, BsCode, BsRocket } from "react-icons/bs";
+import { BsSearch, BsGrid3X3Gap, BsList, BsCode, BsRocket } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
@@ -27,7 +27,7 @@ function Projects() {
   const [isLoading, setIsLoading] = useState(true);
 
   // Project data with categories
-  const projectsData = [
+  const projectsData = useMemo(() => [
     {
       id: 1,
       imgPath: GPT,
@@ -109,7 +109,7 @@ function Projects() {
       category: "Cloud/AWS",
       techStack: ["AWS", "Lambda", "API Gateway", "DynamoDB", "Python"]
     }
-  ];
+  ], []);
 
   const categories = ["All", "AI/ML", "Full Stack", "Cloud/AWS", "Data Science", "Web App"];
 
@@ -122,33 +122,33 @@ function Projects() {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  useEffect(() => {
-    // Simulate loading
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
+  const filterProjects = useCallback((category, searchTerm = '') => {
+    let filtered = [...projectsData];
     
-    filterProjects();
-  }, [activeFilter, debouncedSearchTerm]);
-
-  const filterProjects = () => {
-    let filtered = [...projectsData]; // Create a copy to avoid mutation
-
-    if (activeFilter !== "All") {
-      filtered = filtered.filter(project => project.category === activeFilter);
+    if (category !== 'All') {
+      filtered = filtered.filter(project => project.category === category);
     }
-
-    if (debouncedSearchTerm) {
-      const searchLower = debouncedSearchTerm.toLowerCase();
+    
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(project =>
         project.title.props.children.toLowerCase().includes(searchLower) ||
         project.description.toLowerCase().includes(searchLower) ||
         project.techStack.some(tech => tech.toLowerCase().includes(searchLower))
       );
     }
-
+    
     setFilteredProjects(filtered);
-  };
+  }, [projectsData]);
+
+  useEffect(() => {
+    // Simulate loading
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+    
+    filterProjects(activeFilter, debouncedSearchTerm);
+  }, [activeFilter, debouncedSearchTerm, filterProjects]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
