@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "./PreLoader.css";
 
 function Pre(props) {
@@ -6,14 +6,18 @@ function Pre(props) {
   const [currentText, setCurrentText] = useState("");
   const [isCompleted, setIsCompleted] = useState(false);
   
-  const loadingTexts = [
+  const loadingTexts = useMemo(() => [
     "Initializing...",
     "Loading components...",
     "Compiling assets...",
     "Optimizing performance...",
     "Almost ready...",
     "Welcome!"
-  ];
+  ], []);
+
+  const getRandomText = useCallback(() => {
+    return loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
+  }, [loadingTexts]);
 
   useEffect(() => {
     if (props.load) {
@@ -31,7 +35,7 @@ function Pre(props) {
       }, 30); // 30ms intervals for smooth animation
 
       const textInterval = setInterval(() => {
-        setCurrentText(loadingTexts[Math.floor(Math.random() * loadingTexts.length)]);
+        setCurrentText(getRandomText());
       }, 600); // Slower text changes for better readability
 
       return () => {
@@ -39,7 +43,7 @@ function Pre(props) {
         clearInterval(textInterval);
       };
     }
-  }, [props.load]);
+  }, [props.load, getRandomText]);
 
   if (!props.load) {
     return null;
