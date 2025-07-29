@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
-    }, 1200);
+    }, 3000); // 3 seconds for optimal loading experience
 
     return () => clearTimeout(timer);
   }, []);
