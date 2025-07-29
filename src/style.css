@@ -76,17 +76,50 @@ button:focus {
 /* Navbar Section  */
 /* --------- */
 .sticky {
-  background-color: #1b1a2ea9 !important;
-  transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
-  backdrop-filter: blur(15px) !important;
+  background: rgba(27, 26, 46, 0.05) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(199, 112, 240, 0.15) !important;
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 0 25px rgba(199, 112, 240, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  padding: 0.4rem 2rem !important;
+  font-size: 1.1rem !important;
+}
+
+.navbar-compact {
+  padding: 0.3rem 2rem !important;
+  font-size: 1.05rem !important;
+  background: rgba(27, 26, 46, 0.08) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  border: 1px solid rgba(199, 112, 240, 0.2) !important;
+  box-shadow: 
+    0 4px 20px 0 rgba(31, 38, 135, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.03),
+    0 0 20px rgba(199, 112, 240, 0.1) !important;
+}
+
+.navbar-compact .navbar-brand {
+  font-size: 0.9em !important;
+}
+
+.navbar-compact .navbar-nav .nav-link {
+  padding: 0.5rem 0.8rem !important;
+  font-size: 0.95em !important;
 }
 
 .navbar {
   position: fixed !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  padding: 0.8rem 2rem !important;
   font-size: 1.2rem !important;
+  background: rgba(27, 26, 46, 0.02) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(199, 112, 240, 0.08) !important;
 }
 
 .navbar-toggler {
@@ -144,14 +177,36 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+    background: rgba(24, 26, 39, 0.05) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border-bottom: 1px solid rgba(199, 112, 240, 0.1) !important;
   }
+  
+  .navbar-compact {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 1.2rem !important;
+    background: rgba(24, 26, 39, 0.08) !important;
+  }
+  
+  .navbar-compact .navbar-brand {
+    font-size: 1em !important;
+  }
+  
   .navbar-nav .nav-item a::after {
     display: none !important;
   }
 }
 .navbar-brand {
   color: rgb(250, 250, 250) !important;
+  text-shadow: 0 0 10px rgba(199, 112, 240, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-brand:hover {
+  color: rgb(250, 250, 250) !important;
+  text-shadow: 0 0 15px rgba(199, 112, 240, 0.8) !important;
+  transform: translateY(-1px) !important;
 }
 
 .logo {
@@ -173,6 +228,18 @@ button:focus {
   color: white !important;
   padding-right: 1rem !important;
   padding-left: 1rem !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+  text-shadow: 0 0 8px rgba(199, 112, 240, 0.6) !important;
+  background: rgba(199, 112, 240, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  border-radius: 8px !important;
+  transform: translateY(-1px) !important;
+  border: 1px solid rgba(199, 112, 240, 0.15) !important;
 }
 
 .nav-link {
@@ -204,7 +271,8 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: linear-gradient(90deg, #c95bf5, #be50f4);
+  box-shadow: 0 0 10px rgba(201, 91, 245, 0.5);
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -224,6 +292,7 @@ button:focus {
   animation-iteration-count: infinite; /* Never stop waving :) */
   transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
+  margin-left: 0.5rem;
 }
 
 @keyframes wave-animation {
@@ -231,19 +300,19 @@ button:focus {
     transform: rotate(0deg);
   }
   10% {
-    transform: rotate(14deg);
+    transform: rotate(8deg);
   } /* The following five values can be played with to make the waving more or less extreme */
   20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
     transform: rotate(-4deg);
   }
+  30% {
+    transform: rotate(8deg);
+  }
+  40% {
+    transform: rotate(-2deg);
+  }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
   }
   60% {
     transform: rotate(0deg);
@@ -267,11 +336,11 @@ button:focus {
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding: 30px 2rem !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .home-content {
@@ -280,14 +349,49 @@ button:focus {
   text-align: left;
 }
 
+.home-content-wrapper {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 2rem;
+  width: 60%;
+}
+
+.home-model-container {
+  width: 100%;
+  max-width: 500px;
+  height: 450px;
+  position: relative;
+  z-index: 5;
+}
+
+.home-left {
+  flex: 1;
+  padding: 2rem;
+}
+
+.home-model {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 100%;
+  max-width: 500px;
+  height: 450px;
+  z-index: 10;
+}
+
 .heading {
   font-size: 2.4em !important;
   padding-left: 50px !important;
+  color: white !important;
 }
 
 .heading-name {
   font-size: 2.5em !important;
   padding-left: 45px !important;
+  color: white !important;
 }
 
 .main-name {
@@ -458,7 +562,6 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
 }
 
 .project-card {
@@ -556,7 +659,6 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
   color: white !important;
 }
 
@@ -616,7 +718,6 @@ button:focus {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
   color: white !important;
 }
 
@@ -751,3 +852,155 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* --------- */
+/* 3D Model Viewer Styles */
+/* --------- */
+.model-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(205, 95, 248, 0.2);
+  background: linear-gradient(135deg, rgba(205, 95, 248, 0.1) 0%, transparent 100%);
+  border: 1px solid rgba(205, 95, 248, 0.3);
+}
+
+model-viewer {
+  --poster-color: transparent;
+  --progress-bar-color: #cd5ff8;
+  --progress-mask: none;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+model-viewer::part(default-progress-mask) {
+  display: none;
+}
+
+model-viewer::part(default-progress-bar) {
+  display: none;
+}
+
+/* Home page model container */
+.home-model-container {
+  display: block !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  touch-action: auto !important;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.home-model-container model-viewer {
+  pointer-events: auto !important;
+  touch-action: auto !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+/* Ensure home section doesn't interfere with model interaction */
+.home-section .col-md-5 {
+  pointer-events: auto !important;
+  touch-action: auto !important;
+  overflow: visible !important;
+}
+
+.home-content {
+  pointer-events: auto !important;
+}
+
+/* Flexbox layout for home page */
+.home-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.home-text-section {
+  width: 100%;
+  padding: 0;
+}
+
+.home-model-section {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 200px;
+  min-width: 200px;
+  pointer-events: auto !important;
+  touch-action: auto !important;
+}
+
+/* Responsive adjustments for flexbox home layout */
+@media (max-width: 991px) {
+  .home-flex-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .home-text-section {
+    max-width: 100%;
+    order: 1;
+  }
+  
+  .home-model-section {
+    order: 2;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-section {
+    height: 100vh;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .home-content-wrapper {
+    position: relative;
+    width: 100%;
+    transform: none;
+    top: auto;
+    left: auto;
+    padding: 1rem;
+  }
+  
+  .home-model-container {
+    position: relative;
+    width: 100%;
+    transform: none;
+    top: auto;
+    right: auto;
+    height: 400px;
+    margin-top: 2rem;
+  }
+}
+
+/* Responsive adjustments for 3D model */
+@media (max-width: 767px) {
+  .model-container,
+  .home-model-container {
+    height: 350px !important;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-container,
+  .home-model-container {
+    height: 300px !important;
+  }
+}
+
+
