@@ -47,7 +47,7 @@ function AboutCard() {
 
           <div className="quote-section">
             <p className="inspirational-quote">
-              "When you really want something, all the universe conspires in helping you to achieve it."
+              "When you desire something with all your heart, the entire universe tries to bring it to you."
             </p>
             <footer className="quote-author">— Paulo Coelho</footer>
           </div>
