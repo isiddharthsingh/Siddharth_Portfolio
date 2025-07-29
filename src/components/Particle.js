@@ -1,54 +1,29 @@
 import React from "react";
-import Particles from "react-tsparticles";
+import "./AnimatedBackground.css";
 
 function Particle() {
   return (
-    <Particles
-      id="tsparticles"
-      params={{
-        particles: {
-          number: {
-            value: 160,
-            density: {
-              enable: true,
-              value_area: 1500,
-            },
-          },
-          line_linked: {
-            enable: false,
-            opacity: 0.03,
-          },
-          move: {
-            direction: "right",
-            speed: 0.05,
-          },
-          size: {
-            value: 1,
-          },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
-            },
-          },
-        },
-        interactivity: {
-          events: {
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-          },
-          modes: {
-            push: {
-              particles_nb: 1,
-            },
-          },
-        },
-        retina_detect: true,
-      }}
-    />
+    <div className="animated-background">
+      <div className="grid-overlay"></div>
+      <div className="floating-shapes">
+        <div className="shape shape-1"></div>
+        <div className="shape shape-2"></div>
+        <div className="shape shape-3"></div>
+        <div className="shape shape-4"></div>
+        <div className="shape shape-5"></div>
+        <div className="shape shape-6"></div>
+      </div>
+      <div className="particle-field">
+        {[...Array(50)].map((_, i) => (
+          <div key={i} className={`particle particle-${i % 5}`}></div>
+        ))}
+      </div>
+      <div className="energy-waves">
+        <div className="wave wave-1"></div>
+        <div className="wave wave-2"></div>
+        <div className="wave wave-3"></div>
+      </div>
+    </div>
   );
 }
 
