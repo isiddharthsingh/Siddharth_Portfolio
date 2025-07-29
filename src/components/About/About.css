@@ -126,6 +126,28 @@
   50% { background-position: 100% 50%; }
 }
 
+/* GitHub Calendar Customization */
+.react-activity-calendar__footer,
+.react-activity-calendar__count {
+  color: white !important;
+}
+
+.react-activity-calendar .graph-rect[data-level="1"] {
+  fill: #e9d5ff !important;
+}
+
+.react-activity-calendar .graph-rect[data-level="2"] {
+  fill: #d8b4fe !important;
+}
+
+.react-activity-calendar .graph-rect[data-level="3"] {
+  fill: #c084f5 !important;
+}
+
+.react-activity-calendar .graph-rect[data-level="4"] {
+  fill: #a855f7 !important;
+}
+
 /* About Card Wrapper */
 .about-card-wrapper {
   position: relative;
