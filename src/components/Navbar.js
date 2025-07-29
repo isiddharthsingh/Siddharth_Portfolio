@@ -13,15 +13,23 @@ import {
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 
+
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [navCompact, updateNavCompact] = useState(false);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
       updateNavbar(true);
     } else {
       updateNavbar(false);
+    }
+
+    if (window.scrollY >= 100) {
+      updateNavCompact(true);
+    } else {
+      updateNavCompact(false);
     }
   }
 
@@ -32,7 +40,7 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={`${navColour ? "sticky" : "navbar"} ${navCompact ? "navbar-compact" : ""}`}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
@@ -88,6 +96,8 @@ function NavBar() {
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
+
+
 
             <Nav.Item className="fork-btn">
               <Button
