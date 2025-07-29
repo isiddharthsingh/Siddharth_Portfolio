@@ -694,6 +694,48 @@ button:focus {
   }
 }
 /* --------- */
+/* GitHub Calendar */
+/* --------- */
+
+.styles_calendar__1s6ps text {
+  fill: rgb(255 255 255) !important;
+}
+
+/* GitHub Calendar Legend Text */
+.styles_legend__1YOjj text {
+  fill: rgb(255 255 255) !important;
+}
+
+/* Alternative selectors for GitHub calendar text */
+.react-calendar-heatmap text {
+  fill: rgb(255 255 255) !important;
+}
+
+.react-calendar-heatmap .react-calendar-heatmap-legend text {
+  fill: rgb(255 255 255) !important;
+}
+
+/* --------- */
+/* Fix Double Scrollbar Issue */
+/* --------- */
+
+/* Ensure only one scrollbar is visible globally */
+.about-section-modern {
+  overflow: visible !important;
+}
+
+/* Force remove any container scrollbars */
+.container-fluid.about-section-modern {
+  overflow: visible !important;
+}
+
+/* Remove any potential scrollbars from nested containers */
+.about-section-modern .container,
+.about-section-modern .container-fluid {
+  overflow: visible !important;
+}
+
+/* --------- */
 /* Resume */
 /* --------- */
 
