@@ -1,185 +1,107 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
-
-// Define styles for experience items
-const experienceItemStyle = {
-  marginBottom: "30px",
-  paddingBottom: "25px",
-  borderBottom: "1px solid rgba(124, 82, 149, 0.3)",
-};
-
-// Define styles for the last experience item (no border)
-const lastExperienceItemStyle = {
-  marginBottom: "10px",
-};
-
-// Define styles for list items
-const listItemStyle = {
-  marginBottom: "10px",
-  display: "flex",
-  alignItems: "flex-start"
-};
-
-// Define styles for the icon
-const iconStyle = {
-  color: "white",
-  marginRight: "10px",
-  marginTop: "4px"
-};
+import { Row, Col } from "react-bootstrap";
 
 function ExperienceCard() {
+  const experiences = [
+    {
+      company: "FuteurAI",
+      position: "Lead Developer",
+      location: "New York City Metropolitan Area",
+      duration: "Jan 2025 - Present",
+      achievements: [
+        "Architected microservices application with Next.js and CI/CD pipelines, delivering 40% performance gains and 75% fewer deployment failures while implementing Clerk OAuth for 65% faster sign-ups",
+        "Led security innovation for FuteurSecure by implementing post-quantum cryptography (CRYSTALS-Kyber/Dilithium) and building a system for plug-and-play integration with any database, achieving 100% NIST compliance, 85% vulnerability reduction, and 99.9% data protection in transit and at rest.",
+        "Developed enterprise-grade security monitoring platform that integrates OSSEC HIDS, Wazuh and Suricata IDS/IPS, reducing false positives by 60% and increasing the accuracy of threat detection by 45%.",
+        "Engineered distributed logging system using Hyperledger Fabric blockchain infrastructure with analytics dashboards, increasing customer retention by more than 70% through data-driven user engagement insights"
+      ],
+      current: true
+    },
+    {
+      company: "New York University",
+      position: "Web Developer",
+      location: "New York, USA",
+      duration: "August 2024 - Present",
+      achievements: [
+        "Increased site engagement by 20% by developing and maintaining a modern department website with a Java-based backend and React frontend.",
+        "Optimized functionality, load times, and responsive design for better user experience.",
+        "Improved faculty accessibility and visibility by 30% by creating personalized faculty websites with secure login features.",
+        "Implemented custom layouts and seamless integration, enhancing the user experience for students and faculty."
+      ],
+      current: true
+    },
+    {
+      company: "Cognizant Technology Solutions",
+      position: "Google Cloud Engineer",
+      location: "Hyderabad, India",
+      duration: "July 2021 - August 2023",
+      achievements: [
+        "Enhanced team performance by 35% through customer management and scalable system implementations on Google Cloud Platform (GCP).",
+        "Achieved a 40% increase in operational efficiency by developing GCP-based solutions for diverse clients.",
+        "Improved the efficiency of new hires by over 50% through dedicated GCP training and mentoring.",
+        "Maintained a 99.9% system availability rate for major clients, including Spotify and Netflix, by orchestrating seamless technical operations on GCP."
+      ],
+      current: false
+    },
+    {
+      company: "Webtech Infomedia Pvt Ltd.",
+      position: "Web Development Intern",
+      location: "Mumbai, India",
+      duration: "June 2019 - August 2019",
+      achievements: [
+        "Developed a feature-rich web interface for smart device management using HTML, Bootstrap, and Node.js.",
+        "Implemented security protocols to enhance data integrity and reduce security risks in a multi-user environment."
+      ],
+      current: false
+    }
+  ];
+
   return (
-    <Card
-      className="quote-card-view"
-      style={{
-        backgroundColor: "#262626",
-        color: "white",
-        border: "2px solid #7c5295",
-        borderRadius: "15px",
-        padding: "30px 40px",
-        margin: "20px 0",
-        boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)"
-      }}
-    >
-      <Card.Body>
-        <h2 className="purple" style={{ textAlign: "center", marginBottom: "40px", fontWeight: "bold" }}>
-          Professional Experience
-        </h2>
-        
-        {/* FuteurAI */}
-        <div style={experienceItemStyle}>
-          <h3 className="purple" style={{ textAlign: "left", fontWeight: "600", marginBottom: "10px" }}>
-            FuteurAI — Lead Developer
-          </h3>
-          <h5 style={{ color: "#9b7eac", textAlign: "left", fontStyle: "italic", marginBottom: "15px" }}>
-            New York City Metropolitan Area | Jan 2025 - Present
-          </h5>
-          <ul
-            style={{
-              listStyleType: "none",
-              paddingLeft: "0",
-              textAlign: "left",
-              marginTop: "10px"
-            }}
-          >
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Architected microservices application with Next.js and CI/CD pipelines, delivering 40% performance gains and 75% fewer deployment failures while implementing Clerk OAuth for 65% faster sign-ups
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Led security innovation for FuteurSecure by implementing post-quantum cryptography (CRYSTALS-Kyber/Dilithium) and building a system for plug-and-play integration with any database, achieving 100% NIST compliance, 85% vulnerability reduction, and 99.9% data protection in transit and at rest.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Developed enterprise-grade security monitoring platform that integrates OSSEC HIDS, Wazuh and Suricata IDS/IPS, reducing false positives by 60% and increasing the accuracy of threat detection by 45%.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Engineered distributed logging system using Hyperledger Fabric blockchain infrastructure with analytics dashboards,
-              increasing customer retention by more than 70% through data-driven user engagement insights
-            </li>
-          </ul>
-        </div>
-        
-        {/* NYU */}
-        <div style={experienceItemStyle}>
-          <h3 className="purple" style={{ textAlign: "left", fontWeight: "600", marginBottom: "10px" }}>
-            New York University — Web Developer
-          </h3>
-          <h5 style={{ color: "#9b7eac", textAlign: "left", fontStyle: "italic", marginBottom: "15px" }}>
-            New York, USA | August 2024 - Present
-          </h5>
-          <ul
-            style={{
-              listStyleType: "none",
-              paddingLeft: "0",
-              textAlign: "left",
-              marginTop: "10px"
-            }}
-          >
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Increased site engagement by 20% by developing and maintaining a modern department website with a Java-based backend and React frontend.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Optimized functionality, load times, and responsive design for better user experience.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Improved faculty accessibility and visibility by 30% by creating personalized faculty websites with secure login features.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Implemented custom layouts and seamless integration, enhancing the user experience for students and faculty.
-            </li>
-          </ul>
-        </div>
-        
-        {/* Cognizant */}
-        <div style={experienceItemStyle}>
-          <h3 className="purple" style={{ textAlign: "left", fontWeight: "600", marginBottom: "10px" }}>
-            Cognizant Technology Solutions — Google Cloud Engineer
-          </h3>
-          <h5 style={{ color: "#9b7eac", textAlign: "left", fontStyle: "italic", marginBottom: "15px" }}>
-            Hyderabad, India | July 2021 - August 2023
-          </h5>
-          <ul
-            style={{
-              listStyleType: "none",
-              paddingLeft: "0",
-              textAlign: "left",
-              marginTop: "10px"
-            }}
-          >
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Enhanced team
-              performance by 35% through customer management and scalable
-              system implementations on Google Cloud Platform (GCP).
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Achieved a 40%
-              increase in operational efficiency by developing GCP-based
-              solutions for diverse clients.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Improved the
-              efficiency of new hires by over 50% through dedicated GCP
-              training and mentoring.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Maintained a 99.9%
-              system availability rate for major clients, including Spotify
-              and Netflix, by orchestrating seamless technical operations on
-              GCP.
-            </li>
-          </ul>
-        </div>
-        
-        {/* Webtech */}
-        <div style={lastExperienceItemStyle}>
-          <h3 className="purple" style={{ textAlign: "left", fontWeight: "600", marginBottom: "10px" }}>
-            Webtech Infomedia Pvt Ltd. — Web Development Intern
-          </h3>
-          <h5 style={{ color: "#9b7eac", textAlign: "left", fontStyle: "italic", marginBottom: "15px" }}>
-            Mumbai, India | June 2019 - August 2019
-          </h5>
-          <ul
-            style={{
-              listStyleType: "none",
-              paddingLeft: "0",
-              textAlign: "left",
-              marginTop: "10px"
-            }}
-          >
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Developed a
-              feature-rich web interface for smart device management using
-              HTML, Bootstrap, and Node.js.
-            </li>
-            <li style={listItemStyle}>
-              <ImPointRight style={iconStyle} /> Implemented security
-              protocols to enhance data integrity and reduce security risks in
-              a multi-user environment.
-            </li>
-          </ul>
-        </div>
-      </Card.Body>
-    </Card>
+    <div className="experience-container">
+      <Row className="experience-timeline">
+        {experiences.map((exp, index) => (
+          <Col xs={12} key={index} className="experience-item-wrapper">
+            <div className={`experience-card ${exp.current ? 'current-role' : ''}`}>
+              <div className="experience-header">
+                <div className="company-info">
+                  <h3 className="company-name">{exp.company}</h3>
+                  <div className="position-badge">
+                    <span className="position-title">{exp.position}</span>
+                    {exp.current && <span className="current-indicator">Current</span>}
+                  </div>
+                </div>
+                <div className="experience-meta">
+                  <div className="location">
+                    <span className="location-icon">📍</span>
+                    {exp.location}
+                  </div>
+                  <div className="duration">
+                    <span className="duration-icon">📅</span>
+                    {exp.duration}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="achievements-section">
+                <h4 className="achievements-title">Key Achievements</h4>
+                <ul className="achievements-list">
+                  {exp.achievements.map((achievement, achIndex) => (
+                    <li key={achIndex} className="achievement-item">
+                      <ImPointRight className="achievement-icon" />
+                      <span className="achievement-text">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {index < experiences.length - 1 && (
+                <div className="timeline-connector"></div>
+              )}
+            </div>
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 }
 
