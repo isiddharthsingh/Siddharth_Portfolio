@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BsGithub, BsArrowUpRight, BsCodeSlash, BsLightbulb, BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { BsGithub, BsArrowUpRight, BsCodeSlash, BsLightbulb, BsChevronDown } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
 import { FiExternalLink } from "react-icons/fi";
 import "./ProjectCards.css";
 
 function ProjectCards(props) {
   const [isHovered, setIsHovered] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Extract tech stack from description (you can customize this based on your data)
@@ -104,7 +103,6 @@ function ProjectCards(props) {
           alt="project"
           className="project-image"
           variants={imageVariants}
-          onLoad={() => setImageLoaded(true)}
         />
         
         {/* Image Overlay with Links */}
