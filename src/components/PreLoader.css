@@ -1,0 +1,309 @@
+/* Modern Preloader Styles */
+.modern-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0c0513 0%, #1a0b2e 50%, #16213e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.modern-preloader.fade-out {
+  opacity: 0;
+}
+
+.preloader-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Animated Logo */
+.logo-container {
+  position: relative;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.code-symbol {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #c770f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.bracket {
+  animation: bounce 1.5s ease-in-out infinite;
+  color: #64ffda;
+}
+
+.bracket:first-child {
+  animation-delay: 0s;
+}
+
+.bracket:last-child {
+  animation-delay: 0.3s;
+}
+
+.dev-text {
+  animation: pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(45deg, #c770f0, #64ffda, #ff6b6b);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite, textPulse 2s ease-in-out infinite;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(199, 112, 240, 0.3);
+  border-radius: 50%;
+  animation: pulseRing 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid rgba(100, 255, 218, 0.2);
+  border-radius: 50%;
+  animation: pulseRing 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  animation-delay: 0.5s;
+}
+
+/* Terminal Loading Text */
+.loading-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  color: #64ffda;
+  margin: 2rem 0;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.terminal-prompt {
+  color: #c770f0;
+  font-weight: bold;
+}
+
+.terminal-text {
+  color: #ffffff;
+  animation: typewriter 2s steps(20) infinite;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: #64ffda;
+  font-weight: bold;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 300px;
+  margin: 2rem auto;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c770f0, #64ffda, #ff6b6b);
+  background-size: 200% 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  animation: shimmer 2s ease-in-out infinite;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: progressGlow 1.5s ease-in-out infinite;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-family: 'Courier New', monospace;
+  color: #c770f0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.progress-text.completed {
+  color: #64ffda;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #c770f0;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.particle-2 { top: 40%; right: 15%; animation-delay: 1s; background: #64ffda; }
+.particle-3 { bottom: 30%; left: 20%; animation-delay: 2s; background: #ff6b6b; }
+.particle-3 { bottom: 30%; left: 20%; animation-delay: 2s; background: #ff6b6b; }
+
+/* Animations */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px rgba(199, 112, 240, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(199, 112, 240, 0.8), 0 0 30px rgba(199, 112, 240, 0.6); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes textPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes typewriter {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes progressGlow {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .code-symbol {
+    font-size: 2.5rem;
+  }
+  
+  .loading-text {
+    font-size: 1rem;
+  }
+  
+  .progress-container {
+    width: 250px;
+  }
+  
+  .pulse-ring {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-symbol {
+    font-size: 2rem;
+  }
+  
+  .loading-text {
+    font-size: 0.9rem;
+  }
+  
+  .progress-container {
+    width: 200px;
+  }
+  
+  .pulse-ring {
+    width: 80px;
+    height: 80px;
+  }
+} 
