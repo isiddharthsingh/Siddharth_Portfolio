@@ -30,7 +30,7 @@ function Home() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "2rem",
-          minHeight: "100vh",
+          
           marginTop: 0,
         }}
       >
