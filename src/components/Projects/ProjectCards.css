@@ -314,12 +314,23 @@
   overflow: hidden;
 }
 
-.project-description.collapsed .description-text {
+/* Grid vs List clamps for better readability */
+.projects-grid.grid .project-description.collapsed .description-text {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 6; /* Show 6 lines when collapsed */
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
   -webkit-box-orient: vertical;
   line-height: 1.6;
+}
+
+.projects-grid.list .project-description.collapsed .description-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+  -webkit-box-orient: vertical;
+  line-height: 1.7;
 }
 
 .project-description.expanded .description-text {
@@ -329,16 +340,17 @@
 }
 
 .description-text {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.65;
   margin: 0;
-  text-align: justify;
+  text-align: left; /* avoid weird spacing from justify */
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.15px;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  word-break: break-word;
   width: 100%;
   display: block;
 }
