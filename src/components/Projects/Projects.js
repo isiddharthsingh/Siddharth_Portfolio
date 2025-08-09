@@ -17,6 +17,14 @@ import taleweaver from "../../Assets/Projects/taleweaver.webp";
 import dine from "../../Assets/Projects/dine.webp";
 import typeninja from "../../Assets/Projects/typeninja.png";
 import GPT from "../../Assets/Projects/GPT.png";
+import haronyai from "../../Assets/Projects/haronyai.png";
+import hashtable from "../../Assets/Projects/hashtable.png";
+import cryptostream from "../../Assets/Projects/cryptostream.png";
+import aimarket from "../../Assets/Projects/aimarket.png";
+import pygpt2 from "../../Assets/Projects/pygpt2.png";
+import futeursecure from "../../Assets/Projects/futeursecure.png";
+import isac from "../../Assets/Projects/isac.png";
+import futeurvault from "../../Assets/Projects/futeurvault.png";
 
 function Projects() {
   const [filteredProjects, setFilteredProjects] = useState([]);
@@ -28,6 +36,95 @@ function Projects() {
 
   // Project data with categories
   const projectsData = useMemo(() => [
+    {
+      id: 16,
+      imgPath: isac,
+      title: <span className="purple">ISAC USA</span>,
+      description: "I designed and built the ISAC website to serve as a central hub for international students, focusing on performance, accessibility, and ease of use. The platform supports thousands of concurrent visitors and integrates features like verified WhatsApp group directories, webinar scheduling, volunteer onboarding, and success story showcases. I implemented a responsive, mobile-first UI to ensure seamless access across devices, and optimized backend workflows to handle real-time group updates and secure form submissions. The site architecture is built for scalability, allowing ISAC to expand its services without downtime, while maintaining fast load times and a smooth user experience that reflects the organization’s mission to connect and empower students worldwide.",
+      demoLink: "https://www.isac-usa.org/",
+      category: "Web App",
+      techStack: [
+        "Responsive UI",
+        "Accessibility",
+        "Scalable Architecture",
+        "Real-time Updates",
+        "Secure Forms"
+      ]
+    },
+    {
+      id: 15,
+      imgPath: futeursecure,
+      title: <span className="purple">FuteurSecure</span>,
+      description: "FuteurSecure is an enterprise-grade security and compliance platform you developed at Futeur AI to provide organizations with a robust, future-ready defense system. It integrates post-quantum cryptography (CRYSTALS-Kyber and Dilithium) to secure data against emerging quantum threats, ensuring 99.9% protection for information both in transit and at rest while maintaining 100% NIST compliance. Designed for flexibility, it supports plug-and-play integration with any database, reducing deployment friction. The platform combines multiple security layers, including OSSEC HIDS, Wazuh, and Suricata IDS/IPS, which together reduce false positives by 60% and improve threat detection accuracy by 45%. It also features a distributed, tamper-proof logging system powered by Hyperledger Fabric, giving organizations immutable audit trails and analytics dashboards that enable data-driven insights, boosting customer retention by over 70%. This unified approach makes FuteurSecure not just a monitoring tool, but a complete cybersecurity, compliance, and operational intelligence solution .",
+      demoLink: "https://www.futeursecure.com/",
+      category: "Security",
+      techStack: [
+        "Post-Quantum Cryptography",
+        "CRYSTALS-Kyber",
+        "Dilithium",
+        "OSSEC",
+        "Wazuh",
+        "Suricata",
+        "Hyperledger Fabric",
+        "NIST Compliance",
+        "Immutable Logs"
+      ]
+    },
+    {
+      id: 17,
+      imgPath: futeurvault,
+      title: <span className="purple">Futeur Vault</span>,
+      description: "Futeur Vault is a secure, web-based password management app designed for individuals and teams to store, organize, and share credentials safely. Built with React, TypeScript, and Supabase, it offers protected routes, a clean UI, and features like category-based storage, quick copy, visibility toggles, and last-updated tracking. Users can share passwords with teammates, attach notes, revoke access anytime, and trigger email alerts via EmailJS, making it both a personal vault and a collaborative security tool.",
+      ghLink: "https://github.com/isiddharthsingh/futeur-wallet",
+      demoLink: "https://www.futeursecure.com/vault",
+      category: "Security",
+      techStack: ["React", "TypeScript", "Supabase", "EmailJS", "Tailwind", "shadcn/ui"]
+    },
+    {
+      id: 13,
+      imgPath: aimarket,
+      title: <span className="purple">Ai Market Analysis</span>,
+      description: "Ai-Market-Analysis is a containerized data engineering pipeline powered by Apache Airflow that automatically collects data from Reddit, GitHub, and CoinGecko to analyze trends across the AI, machine learning, and crypto spaces. Orchestrated via Docker Compose, it uses Celery with Redis for task execution and stores consolidated data in PostgreSQL. The system runs three DAGs: one for extraction and ETL, a second for running trend correlations and sentiment analysis, and a third for monitoring data freshness and quality. The pipeline enables insights—like daily counts of AI posts, popular GitHub projects, and crypto trends—and offers SQL queries for deeper exploration. It’s built for long-term trend detection, and the setup is ready for scaling, CI/CD integration, alerting, and visual dashboards in future iterations.",
+      ghLink: "https://github.com/isiddharthsingh/Ai-Market-Analysis",
+      category: "Data Engineering",
+      techStack: ["Airflow", "Docker", "Redis", "Celery", "PostgreSQL", "Python"]
+    },
+    {
+      id: 12,
+      imgPath: cryptostream,
+      title: <span className="purple">Crypto Stream Ai</span>,
+      description: "CryptoStream-AI is a real-time cryptocurrency analytics and forecasting system that fetches live prices from the Coinbase API, streams them through Apache Kafka, processes the data with Apache Spark, and stores it in Cassandra for fast access. The stored data powers Grafana dashboards for real-time monitoring and is also exported to CSV for offline analysis and machine learning models like ARIMA, VAR, moving averages, and LSTM. Forecast results are presented through a Streamlit app, giving users interactive tools to track market trends and predict future price movements.",
+      ghLink: "https://github.com/isiddharthsingh/CryptoStream-AI",
+      category: "Full Stack",
+      techStack: ["Kafka", "Spark", "Cassandra", "Grafana", "Streamlit", "Python"]
+    },
+    {
+      id: 11,
+      imgPath: hashtable,
+      title: <span className="purple">Multithread Hashtable Benchmark</span>,
+      description: "This project benchmarks a multithreaded hash table under different synchronization methods to study their impact on performance and correctness. The baseline version runs without locks, demonstrating how race conditions cause “lost” entries when threads overwrite each other’s updates. Improved versions add per-bucket mutexes for safe concurrent access, optimize mutex use with a reader–writer model to allow parallel reads and bucket-specific writes, and replace mutexes with spinlocks to reduce context-switch overhead in short critical sections. A driver program runs each variant with varying thread counts, measures insertion and retrieval times, and records results for visualization. The comparisons show how each locking strategy trades off speed, CPU usage, and data integrity under different contention levels.",
+      ghLink: "https://github.com/isiddharthsingh/Multithread-Hashtable-Benchmark",
+      category: "Systems",
+      techStack: ["C", "POSIX Threads", "Mutexes", "Reader-Writer Locks", "Spinlocks", "Benchmarking"]
+    },
+    {
+      id: 14,
+      imgPath: pygpt2,
+      title: <span className="purple">PyGPT2</span>,
+      description: "PyGPT2 is a PyTorch-based reimplementation of OpenAI’s GPT-2 architecture, built to train and experiment with transformer language models from scratch. It includes scripts for preparing datasets like FineWeb-Edu, training the 124M-parameter model using both single-GPU and distributed setups, evaluating zero-shot performance on benchmarks such as HellaSwag, and generating text samples. The project provides a clear, modular codebase for understanding GPT-2 internals—covering tokenization, model architecture, training loops, and inference—making it useful for learning, experimentation, and research in natural language processing.",
+      ghLink: "https://github.com/isiddharthsingh/PyGPT2",
+      category: "AI/ML",
+      techStack: ["PyTorch", "Transformer", "DDP", "HellaSwag", "Python"]
+    },
+    {
+      id: 10,
+      imgPath: haronyai,
+      title: <span className="purple">Harmony AI</span>,
+      description: "Harmony AI is an AI-powered productivity assistant that integrates Slack, Trello, Gmail, and Google Calendar to centralize task, email, and follow-up management. It lets users create, update, and delete Trello tasks and checklists directly from Slack, automatically syncing due dates with Google Calendar. The bot can fetch unread Gmail emails and post them in Slack channels, ensuring important messages are seen quickly. By combining these tools, Harmony AI streamlines workflows, reduces context switching, and helps users stay organized through real-time reminders and easy command-based actions inside Slack.",
+      ghLink: "https://github.com/isiddharthsingh/mAIgic-nyu/tree/hw3_submission",
+      category: "AI/ML",
+      techStack: ["Slack API", "Trello API", "Gmail API", "Google Calendar API", "Node.js", "Python"]
+    },
     {
       id: 1,
       imgPath: GPT,
@@ -111,7 +208,7 @@ function Projects() {
     }
   ], []);
 
-  const categories = ["All", "AI/ML", "Full Stack", "Cloud/AWS", "Data Science", "Web App"];
+  const categories = ["All", "AI/ML", "Full Stack", "Cloud/AWS", "Data Science", "Web App", "Systems", "Data Engineering", "Security"];
 
   // Debounce search term
   useEffect(() => {
@@ -350,6 +447,7 @@ function Projects() {
                               ghLink={project.ghLink}
                               demoLink={project.demoLink}
                               category={project.category}
+                              techStack={project.techStack}
                             />
                         </motion.div>
                       ))

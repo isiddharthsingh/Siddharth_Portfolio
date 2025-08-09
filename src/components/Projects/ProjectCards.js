@@ -9,7 +9,7 @@ function ProjectCards(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Extract tech stack from description (you can customize this based on your data)
+  // Extract tech stack from description (fallback only)
   const extractTechStack = (description) => {
     const techKeywords = [
       'React', 'Node.js', 'Python', 'JavaScript', 'TypeScript', 'AWS', 'Docker', 
@@ -19,17 +19,21 @@ function ProjectCards(props) {
       'Firebase', 'GCP', 'Azure', 'Lambda', 'DynamoDB', 'S3', 'EC2',
       'ElasticSearch', 'ChromaDB', 'VectorDB', 'Llama-3', 'Transformer',
       'HTML', 'CSS', 'Bootstrap', 'Tailwind', 'SCSS', 'WebGL',
-      'PyMuPDF', 'SQS', 'API Gateway', 'Cognito', 'Rekognition'
+      'PyMuPDF', 'SQS', 'API Gateway', 'Cognito', 'Rekognition',
+      'Kafka', 'Spark', 'Cassandra', 'Grafana', 'ARIMA', 'VAR', 'LSTM', 'Airflow', 'Celery', 'PostgreSQL', 'Redis', 'Docker'
     ];
     
     const foundTech = techKeywords.filter(tech => 
       description.toLowerCase().includes(tech.toLowerCase())
     );
     
-    return foundTech.slice(0, 6); // Limit to 6 badges for clean design
+    return foundTech; // show all found as this is fallback only
   };
 
-  const techStack = extractTechStack(props.description);
+  // Prefer explicit techStack from props, otherwise fall back to extraction
+  const techStack = (props.techStack && props.techStack.length > 0)
+    ? props.techStack
+    : extractTechStack(props.description);
 
   const cardVariants = {
     hidden: { 
@@ -116,16 +120,18 @@ function ProjectCards(props) {
               exit="hidden"
             >
               <div className="overlay-buttons">
-                <motion.a
-                  href={props.ghLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="overlay-btn github-btn"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <BsGithub />
-                </motion.a>
+                {props.ghLink && (
+                  <motion.a
+                    href={props.ghLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="overlay-btn github-btn"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <BsGithub />
+                  </motion.a>
+                )}
                 
                 {props.demoLink && (
                   <motion.a
@@ -259,18 +265,20 @@ function ProjectCards(props) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <motion.a
-            href={props.ghLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="action-btn primary-btn"
-            whileHover={{ scale: 1.05, x: 5 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <BsGithub />
-            <span>Source Code</span>
-            <FiExternalLink className="external-icon" />
-          </motion.a>
+          {props.ghLink && (
+            <motion.a
+              href={props.ghLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn primary-btn"
+              whileHover={{ scale: 1.05, x: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <BsGithub />
+              <span>Source Code</span>
+              <FiExternalLink className="external-icon" />
+            </motion.a>
+          )}
 
           {props.demoLink && (
             <motion.a
