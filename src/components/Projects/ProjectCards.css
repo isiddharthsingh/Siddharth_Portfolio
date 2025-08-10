@@ -12,8 +12,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 0;
-  margin: 20px;
-  height: 600px; /* Fixed height to prevent jumping in grid view */
+  margin: 0; /* grid handles gaps */
   cursor: pointer;
   overflow: hidden;
   perspective: 1000px;
@@ -24,13 +23,11 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
               box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
 }
 
 /* List view: allow the card to expand so buttons are never clipped */
-.projects-grid.list .futuristic-project-card {
-  height: auto;
-  min-height: 420px;
-}
+.projects-grid.list .futuristic-project-card { height: auto; min-height: 420px; }
 
 .projects-grid.list .content-container {
   height: auto;
@@ -118,7 +115,8 @@
 /* Image Container */
 .image-container {
   position: relative;
-  height: 240px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
@@ -218,11 +216,10 @@
   padding: 24px;
   z-index: 3;
   position: relative;
-  height: calc(100% - 240px);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  overflow: hidden; /* Ensures content doesn't break container bounds */
+  overflow: hidden;
 }
 
 /* Card Header */
@@ -444,7 +441,7 @@
 .action-buttons {
   display: flex;
   gap: 12px;
-  margin-top: auto;
+  margin-top: auto; /* push buttons to bottom for equal heights */
   padding-top: 16px;
 }
 
@@ -567,17 +564,11 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .futuristic-project-card {
-    margin: 15px;
-    height: 550px; /* Fixed height */
-  }
-
-  .image-container {
-    height: 200px;
+    margin: 0;
   }
 
   .content-container {
     padding: 20px;
-    height: calc(100% - 200px);
   }
 
   .project-title {
@@ -606,18 +597,12 @@
 
 @media (max-width: 480px) {
   .futuristic-project-card {
-    margin: 10px;
-    height: 500px; /* Fixed height */
-  }
-
-  .image-container {
-    height: 180px;
+    margin: 0;
   }
 
   .content-container {
     padding: 16px;
     gap: 12px;
-    height: calc(100% - 180px);
   }
 
   .project-title {

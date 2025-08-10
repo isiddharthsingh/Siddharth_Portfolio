@@ -476,151 +476,27 @@
   margin-top: 40px;
 }
 
-.projects-grid {
-  width: 100%;
-}
-
-.projects-grid.list .futuristic-project-card {
-  display: flex;
-  flex-direction: row;
-  max-width: none;
-  height: 350px; /* Increased height to accommodate description */
-  margin: 20px 0;
-}
-
-.projects-grid.list .image-container {
-  width: 300px;
-  height: 100%;
-  border-radius: 20px 0 0 20px;
-  flex-shrink: 0;
-}
-
-.projects-grid.list .content-container {
-  flex: 1;
-  height: 100%;
-  padding: 24px;
-  min-width: 0; /* Prevent content overflow */
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.projects-grid.list .card-header {
-  flex-shrink: 0;
-}
-
-.projects-grid.list .tech-stack {
-  margin: 8px 0;
-  flex-shrink: 0;
-}
-
-.projects-grid.list .description-container {
-  flex: 1;
-  min-height: 100px; /* Ensure minimum space for description */
-  display: flex;
-  flex-direction: column;
-}
-
-.projects-grid.list .project-description {
-  flex: 1;
-  min-height: 60px; /* Ensure description has minimum height */
-}
-
-.projects-grid.list .project-description.collapsed .description-text {
-  -webkit-line-clamp: 3; /* Show 3 lines in list mode */
-  max-height: 4.8em; /* 3 lines * 1.6 line-height */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  color: rgba(255, 255, 255, 0.85) !important;
-  background: rgba(0, 0, 0, 0.1); /* Temporary debugging background */
-}
-
-.projects-grid.list .project-description.expanded .description-text {
-  overflow-y: auto;
-  max-height: 120px; /* Limit height in list mode */
-  color: rgba(255, 255, 255, 0.85) !important;
-  background: rgba(0, 0, 0, 0.1); /* Temporary debugging background */
-}
-
-/* List mode description visibility fix */
-.projects-grid.list .description-text {
-  opacity: 1 !important;
-  visibility: visible !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-.projects-grid.list .action-buttons {
-  flex-direction: row;
-  gap: 8px;
-  flex-shrink: 0;
-  margin-top: auto;
-}
-
-.project-rows {
-  margin: 0 -15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+/* Uniform CSS Grid */
+.uniform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   align-items: stretch;
 }
 
-.project-col {
-  padding: 0 15px;
-  margin-bottom: 30px;
+.uniform-item {
   display: flex;
-  flex-direction: column;
 }
 
-.project-col > div {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Bootstrap-style column classes */
-.project-col.col-md-4 {
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
-}
-
-.project-col.col-12 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-/* Ensure filtered projects flow properly */
-.projects-grid.grid .project-rows {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.projects-grid.list .project-rows {
-  display: flex;
-  flex-direction: column;
-}
-
-.projects-grid.list .project-col {
-  width: 100%;
-  max-width: 100%;
-  flex: 0 0 100%;
-}
-
-/* Responsive adjustments for custom grid */
-@media (max-width: 992px) {
-  .project-col.col-md-4 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
+@media (max-width: 1200px) {
+  .uniform-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .project-col.col-md-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+  .uniform-grid { grid-template-columns: 1fr; }
 }
+
+/* Remove old grid/list system and bootstrap-like columns */
 
 /* Loading Container */
 .loading-container {

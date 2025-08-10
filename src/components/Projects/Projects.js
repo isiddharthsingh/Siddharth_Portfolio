@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Container } from "react-bootstrap";
 import { motion, AnimatePresence } from "framer-motion";
-import { BsSearch, BsGrid3X3Gap, BsList, BsCode, BsRocket } from "react-icons/bs";
+import { BsSearch, BsCode, BsRocket } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
@@ -11,9 +11,9 @@ import "./Projects.css";
 import llamalingo from "../../Assets/Projects/llamalingo.png";
 import tubegenie from "../../Assets/Projects/tubegenie.png";
 import resumemaestro from "../../Assets/Projects/resumemaestro.png";
-import ecostock from "../../Assets/Projects/ecostock.webp";
-import shems from "../../Assets/Projects/shems.webp";
-import taleweaver from "../../Assets/Projects/taleweaver.webp";
+import ecostock from "../../Assets/Projects/ecostock.png";
+import shems from "../../Assets/Projects/shem.png";
+import taleweaver from "../../Assets/Projects/taleweaver.png";
 import dine from "../../Assets/Projects/dine.webp";
 import typeninja from "../../Assets/Projects/typeninja.png";
 import GPT from "../../Assets/Projects/GPT.png";
@@ -31,7 +31,7 @@ function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
-  const [viewMode, setViewMode] = useState("grid");
+  // New modern layout uses a responsive masonry grid
   const [isLoading, setIsLoading] = useState(true);
 
   // Project data with categories
@@ -156,7 +156,7 @@ function Projects() {
       id: 4,
       imgPath: tubegenie,
       title: <span className="purple">TubeGenie</span>,
-      description: "Designed and deployed an AI-driven Q&A system to analyze YouTube video content using OpenAI's GPT-4-turbo model. Utilized Embedchain for data ingestion, ChromaDB for storage, and VectorDB for quick retrieval. The system features an interactive Streamlit user interface for seamless interaction and includes efficient resource management strategies with a cleanup mechanism for temporary data storage. Key technologies: GPT-4-turbo, Embedchain, ChromaDB, VectorDB, Streamlit.",
+      description: "Designed and deployed an AI-driven Q&A system to analyze YouTube video content using OpenAI's GPT-4-turbo model. Utilized Embedchain for data ingestion, ChromaDB for storage, and VectorDB for quick retrieval. The system features an interactive Streamlit user interface for seamless interaction and includes efficient resource management strategies with a cleanup mechanism for temporary data storage.",
       ghLink: "https://github.com/isiddharthsingh/TubeGenie",
       category: "AI/ML",
       techStack: ["GPT-4", "Streamlit", "ChromaDB", "VectorDB", "Python"]
@@ -165,7 +165,7 @@ function Projects() {
       id: 5,
       imgPath: resumemaestro,
       title: <span className="purple">Resume Maestro</span>,
-      description: "Engineered a resume optimization application that integrates Streamlit for the frontend and FastAPI for the backend, offering a seamless and user-friendly experience. The system uses OpenAI's GPT-4 to enhance resume content based on job descriptions, supports LaTeX and PDF outputs, and features text extraction from resumes using PyMuPDF. Robust LaTeX templates ensure high-quality document formatting. The backend is scaled and managed using Docker, with features allowing users to upload resumes, input job descriptions, and download optimized resumes in real-time, enhancing user satisfaction and engagement. Key technologies: Streamlit, FastAPI, GPT-4, PyMuPDF, Docker.",
+      description: "Engineered a resume optimization application that integrates Streamlit for the frontend and FastAPI for the backend, offering a seamless and user-friendly experience. The system uses OpenAI's GPT-4 to enhance resume content based on job descriptions, supports LaTeX and PDF outputs, and features text extraction from resumes using PyMuPDF. Robust LaTeX templates ensure high-quality document formatting. The backend is scaled and managed using Docker, with features allowing users to upload resumes, input job descriptions, and download optimized resumes in real-time, enhancing user satisfaction and engagement.",
       ghLink: "https://github.com/isiddharthsingh/Resume-Maestro",
       category: "Full Stack",
       techStack: ["Streamlit", "FastAPI", "GPT-4", "Docker", "Python"]
@@ -174,7 +174,7 @@ function Projects() {
       id: 6,
       imgPath: taleweaver,
       title: <span className="purple">TaleWeaver</span>,
-      description: "Developed 'Taleweaver,' an AI-driven platform leveraging AWS Rekognition and OpenAI's GPT for advanced image recognition, natural language processing, and personalized story generation. It features a robust security framework using AWS Cognito and AWS API Gateway for secure, scalable API interactions. Deployed on AWS EC2 with serverless operations through AWS Lambda, it ensures optimal resource management and cost efficiency. The platform also includes a user-centric interface backed by AWS DynamoDB, enhancing user engagement and efficient data management. Key technologies: AWS suite (Rekognition, Cognito, API Gateway, EC2, Lambda, DynamoDB), OpenAI's GPT.",
+      description: "Developed 'Taleweaver,' an AI-driven platform leveraging AWS Rekognition and OpenAI's GPT for advanced image recognition, natural language processing, and personalized story generation. It features a robust security framework using AWS Cognito and AWS API Gateway for secure, scalable API interactions. Deployed on AWS EC2 with serverless operations through AWS Lambda, it ensures optimal resource management and cost efficiency. The platform also includes a user-centric interface backed by AWS DynamoDB, enhancing user engagement and efficient data management.",
       ghLink: "https://github.com/isiddharthsingh/Taleweaver",
       category: "Cloud/AWS",
       techStack: ["AWS", "Lambda", "DynamoDB", "OpenAI", "Python"]
@@ -201,7 +201,7 @@ function Projects() {
       id: 9,
       imgPath: dine,
       title: <span className="purple">Serverless Dining Concierge Chatbot</span>,
-      description: "Implemented a serverless, microservice-driven Dining Concierge chatbot using NLP, AWS S3, API Gateway, and AWS Lambda to provide restaurant suggestions tailored to user preferences. Developed a decoupled suggestions module that handles message retrieval via Amazon SQS, recommendation fetching using Amazon ElasticSearch and DynamoDB, and email delivery through Amazon SES. Automated the workflow with CloudWatch event triggers for seamless operation. The system enhances user experience in the hospitality industry with scalable, conversational AI. Key technologies: AWS (S3, Lambda, API Gateway, SQS, ElasticSearch, DynamoDB, SES), NLP, serverless architecture.",
+      description: "Implemented a serverless, microservice-driven Dining Concierge chatbot using NLP, AWS S3, API Gateway, and AWS Lambda to provide restaurant suggestions tailored to user preferences. Developed a decoupled suggestions module that handles message retrieval via Amazon SQS, recommendation fetching using Amazon ElasticSearch and DynamoDB, and email delivery through Amazon SES. Automated the workflow with CloudWatch event triggers for seamless operation. The system enhances user experience in the hospitality industry with scalable, conversational AI.",
       ghLink: "https://github.com/isiddharthsingh/Serverless-Dining-Concierge-Chatbot",
       category: "Cloud/AWS",
       techStack: ["AWS", "Lambda", "API Gateway", "DynamoDB", "Python"]
@@ -285,8 +285,7 @@ function Projects() {
   return (
     <Container fluid className="futuristic-project-section">
       <Particle />
-      
-      {/* Background Effects */}
+
       <div className="project-bg-effects">
         <div className="floating-orbs">
           {[...Array(5)].map((_, i) => (
@@ -303,7 +302,6 @@ function Projects() {
           animate="visible"
           className="project-content"
         >
-          {/* Header Section */}
           <motion.div variants={headerVariants} className="project-header">
             <div className="header-content">
               <div className="title-section">
@@ -316,15 +314,14 @@ function Projects() {
                 </motion.div>
                 <div className="title-text">
                   <h1 className="main-title">
-                    Featured <span className="gradient-text">Projects</span>
+                    Work & <span className="gradient-text">Experiments</span>
                   </h1>
                   <p className="subtitle">
-                    Innovative solutions crafted with cutting-edge technologies
+                    A curated selection of things I’ve designed, engineered, and shipped — from AI systems and data platforms to web apps and cloud-native services.
                   </p>
                 </div>
               </div>
-              
-              {/* Project Stats */}
+
               <motion.div variants={statsVariants} className="project-stats">
                 <div className="stat-item">
                   <div className="stat-number">{projectsData.length}</div>
@@ -338,38 +335,35 @@ function Projects() {
                 <div className="stat-divider"></div>
                 <div className="stat-item">
                   <div className="stat-number">∞</div>
-                  <div className="stat-label">Possibilities</div>
+                  <div className="stat-label">Ideas</div>
                 </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Controls Section */}
           <motion.div 
             className="project-controls"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            {/* Search Bar */}
             <div className="search-container">
               <BsSearch className="search-icon" />
               <input
                 type="text"
-                placeholder="Search projects by name, technology, or description..."
+                placeholder="Search by name, stack, or description..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="search-input"
               />
             </div>
 
-            {/* Filter Categories */}
             <div className="filter-container">
               <div className="filter-header">
                 <FiFilter className="filter-icon" />
-                <span>Filter by Category</span>
+                <span>Browse by Category</span>
               </div>
-              <div className="category-filters">
+              <div className="category-filters chips-scroll">
                 {categories.map((category) => (
                   <motion.button
                     key={category}
@@ -390,25 +384,8 @@ function Projects() {
                 ))}
               </div>
             </div>
-
-            {/* View Mode Toggle */}
-            <div className="view-controls">
-              <button
-                className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
-                onClick={() => setViewMode('grid')}
-              >
-                <BsGrid3X3Gap />
-              </button>
-              <button
-                className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-                onClick={() => setViewMode('list')}
-              >
-                <BsList />
-              </button>
-            </div>
           </motion.div>
 
-          {/* Projects Grid */}
           <motion.div 
             className="projects-wrapper"
             initial={{ opacity: 0 }}
@@ -418,56 +395,48 @@ function Projects() {
             {isLoading ? (
               <div className="loading-container">
                 <div className="loading-spinner"></div>
-                <p>Loading amazing projects...</p>
+                <p>Loading projects...</p>
               </div>
             ) : (
-              <div className={`projects-grid ${viewMode}`}>
-                <motion.div className="project-rows" layout>
-                  <AnimatePresence>
-                    {filteredProjects.length > 0 ? (
-                      filteredProjects.map((project, index) => (
-                        <motion.div
-                          key={project.id}
-                          className={`project-col ${viewMode === 'grid' ? 'col-md-4' : 'col-12'}`}
-                          initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -50, scale: 0.9 }}
-                          transition={{ 
-                            delay: index * 0.05, 
-                            duration: 0.4,
-                            ease: [0.25, 0.46, 0.45, 0.94]
-                          }}
-                          layout
-                        >
-                                                      <ProjectCard
-                              imgPath={project.imgPath}
-                              isBlog={false}
-                              title={project.title}
-                              description={project.description}
-                              ghLink={project.ghLink}
-                              demoLink={project.demoLink}
-                              category={project.category}
-                              techStack={project.techStack}
-                            />
-                        </motion.div>
-                      ))
-                    ) : (
-                      <motion.div 
-                        className="project-col col-12"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        layout
+              <div className="uniform-grid">
+                <AnimatePresence>
+                  {filteredProjects.length > 0 ? (
+                    filteredProjects.map((project, index) => (
+                      <motion.div
+                        key={project.id}
+                        className="uniform-item"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ delay: index * 0.04, duration: 0.35 }}
                       >
-                        <div className="no-results">
-                          <div className="no-results-icon">🔍</div>
-                          <h3>No Projects Found</h3>
-                          <p>Try adjusting your search terms or filters</p>
-                        </div>
+                        <ProjectCard
+                          imgPath={project.imgPath}
+                          isBlog={false}
+                          title={project.title}
+                          description={project.description}
+                          ghLink={project.ghLink}
+                          demoLink={project.demoLink}
+                          category={project.category}
+                          techStack={project.techStack}
+                        />
                       </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                    ))
+                  ) : (
+                    <motion.div 
+                      className="uniform-item"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <div className="no-results">
+                        <div className="no-results-icon">🔍</div>
+                        <h3>No Projects Found</h3>
+                        <p>Try adjusting your search terms or filters</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
           </motion.div>
