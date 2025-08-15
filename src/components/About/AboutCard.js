@@ -9,19 +9,19 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <div className="about-text-content">
             <p className="about-intro-text">
-              I'm a full-stack software engineer who enjoys building scalable systems and AI-driven solutions that make a real impact. My work spans modern web development, cloud architecture, and machine learning, with hands-on experience across the full development lifecycle.
+              I’m Siddharth Singh, a software engineer and computer science graduate student at New York University with a strong focus on building scalable, secure, and user-focused applications. My experience spans full-stack development, cloud engineering, and AI-powered solutions.
             </p>
-            
+
             <p className="about-description">
-              I hold a Master's in Computer Science from <span className="purple">New York University</span>, where I worked on projects ranging from real-time data pipelines to enterprise-grade security platforms. In past roles, I've architected microservices, designed secure cloud infrastructure, and built CI/CD pipelines that improved performance and reliability.
+              I’ve designed and delivered systems across the full development lifecycle—from architecting microservices with Next.js and integrating post-quantum cryptography for enterprise security, to creating real-time analytics pipelines and AI productivity tools that cut manual work in half. My work at companies like Cognizant Technology Solutions and Futeur Ai, along with my projects such as CryptoStream AI and HarmonyAI, reflects my ability to blend deep technical skill with practical problem-solving.
             </p>
-            
+
             <p className="about-description">
-              Certified as a DevOps Engineer, Associate Cloud Engineer, and in Deep Learning, I'm skilled in technologies like React, Python, Node.js, Kubernetes, and both AWS and GCP. I've led projects that reduced deployment failures by 75%, improved system security by 85%, and increased user engagement by over 20%.
+              I’m fluent in modern web and backend stacks, comfortable with cloud platforms like AWS and GCP, and experienced with containerization, automation, and database management. I approach software engineering as both a craft and a collaboration—pairing clean, maintainable code with a focus on user needs and business impact.
             </p>
-            
+
             <p className="about-description">
-              I'm driven by curiosity and the challenge of turning complex problems into elegant solutions. Whether it's optimizing cloud operations, creating data-driven applications, or applying AI to boost productivity, I'm always focused on delivering work that's robust, maintainable, and user-centered.
+              Beyond my technical skills, I bring curiosity, adaptability, and a drive to keep learning. Whether it’s exploring emerging AI/ML applications or refining deployment workflows, I aim to build systems that are not only functional but reliable, secure, and impactful.
             </p>
             
             <div className="personal-interests">
