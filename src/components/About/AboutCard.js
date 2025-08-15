@@ -9,19 +9,19 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <div className="about-text-content">
             <p className="about-intro-text">
-              Hello! I'm <span className="purple highlight-name">Siddharth Singh</span>, a versatile tech professional based in <span className="purple highlight-location">New York City</span> with a passion for innovative solutions and cutting-edge technologies.
+              I'm a full-stack software engineer who enjoys building scalable systems and AI-driven solutions that make a real impact. My work spans modern web development, cloud architecture, and machine learning, with hands-on experience across the full development lifecycle.
             </p>
             
             <p className="about-description">
-              Currently, I'm leading development initiatives at <span className="purple">FuteurAI</span> while simultaneously serving as a Web Developer at <span className="purple">New York University</span>, where I'm also pursuing my Master's in Computer Science. My dual role allows me to blend academic knowledge with practical industry applications.
+              I hold a Master's in Computer Science from <span className="purple">New York University</span>, where I worked on projects ranging from real-time data pipelines to enterprise-grade security platforms. In past roles, I've architected microservices, designed secure cloud infrastructure, and built CI/CD pipelines that improved performance and reliability.
             </p>
             
             <p className="about-description">
-              My professional journey includes over two years as a Google Cloud Engineer at <span className="purple">Cognizant Technology Solutions</span>, where I maintained 99.9% system availability for major clients like <span className="purple">Spotify</span> and <span className="purple">Netflix</span>. I've consistently delivered results, improving team performance by 35% and operational efficiency by 40% through scalable cloud implementations.
+              Certified as a DevOps Engineer, Associate Cloud Engineer, and in Deep Learning, I'm skilled in technologies like React, Python, Node.js, Kubernetes, and both AWS and GCP. I've led projects that reduced deployment failures by 75%, improved system security by 85%, and increased user engagement by over 20%.
             </p>
             
             <p className="about-description">
-              I specialize in full-stack development with expertise in <span className="purple">React</span>, <span className="purple">Java</span>, and cloud technologies. My approach combines technical excellence with a focus on user experience and business impact, as demonstrated by the 20% increase in site engagement I achieved for NYU's department website.
+              I'm driven by curiosity and the challenge of turning complex problems into elegant solutions. Whether it's optimizing cloud operations, creating data-driven applications, or applying AI to boost productivity, I'm always focused on delivering work that's robust, maintainable, and user-centered.
             </p>
             
             <div className="personal-interests">

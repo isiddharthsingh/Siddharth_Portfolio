@@ -19,30 +19,16 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              A passionate software engineer with a focus on
-              
-              <i>
-                <b className="purple"> Cloud Computing, Data Science, and Machine Learning.</b>
-              </i>
+              I'm a full-stack software engineer who enjoys building scalable systems and AI-driven solutions that make a real impact. My work spans modern web development, cloud architecture, and machine learning, with hands-on experience across the full development lifecycle.
               <br />
               <br />
-              <p>I am currently pursuing a Master of Computer Science at New York University (NYU).
-                 With a strong academic foundation and extensive professional experience, 
-                 I aim to create impactful technological solutions that drive innovation and efficiency.</p>
-              <br />
-              <p>I'm certified <i>
-                <b className="purple">DevOps Engineer, </b> <b className="purple">Associate Cloud Engineer</b> and <b className="purple">Deep Leaning Engineer</b>
-              </i> 
-              </p>
-              My field of Interest's are  &nbsp;
-              <i>
-                <b className="purple">Web Development, Deep Learning, LLMs.</b>
-              </i>
+              I hold a Master's in Computer Science from <span className="purple">New York University</span>, where I worked on projects ranging from real-time data pipelines to enterprise-grade security platforms. In past roles, I've architected microservices, designed secure cloud infrastructure, and built CI/CD pipelines that improved performance and reliability.
               <br />
               <br />
-              <p>My expertise lies in designing and implementing scalable cloud solutions, 
-                developing data-driven applications, and leveraging machine learning to solve complex problems. 
-                I'm always eager to learn and explore new technologies, and I'm committed to continuous professional growth.</p>
+              Certified as a DevOps Engineer, Associate Cloud Engineer, and in Deep Learning, I'm skilled in technologies like React, Python, Node.js, Kubernetes, and both AWS and GCP. I've led projects that reduced deployment failures by 75%, improved system security by 85%, and increased user engagement by over 20%.
+              <br />
+              <br />
+              I'm driven by curiosity and the challenge of turning complex problems into elegant solutions. Whether it's optimizing cloud operations, creating data-driven applications, or applying AI to boost productivity, I'm always focused on delivering work that's robust, maintainable, and user-centered.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
