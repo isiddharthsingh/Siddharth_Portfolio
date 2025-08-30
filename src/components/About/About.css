@@ -3,7 +3,7 @@
 /* Base Section Styling */
 .about-section-modern {
   position: relative;
-  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #000000 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #e2e8f0 75%, #f9fafb 100%);
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: visible;
@@ -77,7 +77,7 @@
 .indicator-text {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #a0a0a0;
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -106,7 +106,7 @@
 .about-main-heading {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  color: white;
+  color: rgb(30, 41, 59);
   margin-bottom: 3rem;
   line-height: 1.2;
   font-family: 'Segoe UI', system-ui, sans-serif;
@@ -129,7 +129,7 @@
 /* GitHub Calendar Customization */
 .react-activity-calendar__footer,
 .react-activity-calendar__count {
-  color: white !important;
+  color: rgb(30, 41, 59) !important;
 }
 
 .react-activity-calendar .graph-rect[data-level="1"] {
@@ -154,15 +154,15 @@
 }
 
 .about-card-wrapper .quote-card-view {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 2.5rem;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -183,9 +183,9 @@
   transform: translateY(-5px);
   border-color: rgba(120, 79, 255, 0.3);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.15),
     0 0 30px rgba(120, 79, 255, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 /* Image Section */
@@ -294,7 +294,7 @@
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: white;
+  color: rgb(30, 41, 59);
   margin-bottom: 1rem;
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
@@ -325,15 +325,15 @@
 .skills-grid-wrapper,
 .tools-grid-wrapper {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   padding: 3rem 2rem;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease;
 }
 
@@ -341,14 +341,14 @@
 .tools-grid-wrapper:hover {
   border-color: rgba(120, 79, 255, 0.2);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.15),
     0 0 30px rgba(120, 79, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 /* Enhanced Tech Icons */
 .tech-icons {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
   border: 1.5px solid rgba(120, 79, 255, 0.3) !important;
   border-radius: 15px !important;
   backdrop-filter: blur(10px) !important;
@@ -377,9 +377,9 @@
   transform: translateY(-8px) scale(1.08) !important;
   border-color: rgba(120, 79, 255, 0.6) !important;
   box-shadow: 
-    0 15px 30px rgba(0, 0, 0, 0.4) !important,
+    0 15px 30px rgba(0, 0, 0, 0.15) !important,
     0 0 40px rgba(120, 79, 255, 0.3) !important,
-    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
   background: rgba(120, 79, 255, 0.1) !important;
 }
 
@@ -455,7 +455,7 @@
   font-size: 1.15rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  color: #e0e0e0;
+  color: #475569;
   font-weight: 500;
 }
 
@@ -463,7 +463,7 @@
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  color: #d0d0d0;
+  color: #64748b;
   text-align: justify;
 }
 
@@ -487,15 +487,15 @@
 .personal-interests {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   backdrop-filter: blur(10px);
 }
 
 .interests-intro {
   font-size: 1rem;
-  color: #d0d0d0;
+  color: #64748b;
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -531,7 +531,7 @@
 }
 
 .about-activity span {
-  color: #e0e0e0;
+  color: #475569;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -539,7 +539,7 @@
 .quote-section {
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
 }
@@ -558,14 +558,14 @@
 .inspirational-quote {
   font-size: 1.1rem;
   font-style: italic;
-  color: #c0a0d0;
+  color: #6b7280;
   margin-bottom: 1rem;
   line-height: 1.6;
   font-weight: 500;
 }
 
 .quote-author {
-  color: #a0a0a0;
+  color: #9ca3af;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -598,16 +598,16 @@
 
 .experience-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 2rem;
   margin-left: 60px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.4s ease;
   overflow: hidden;
 }
@@ -640,9 +640,9 @@
   transform: translateY(-5px);
   border-color: rgba(120, 79, 255, 0.3);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.15),
     0 0 30px rgba(120, 79, 255, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .current-role {
@@ -661,7 +661,7 @@
 .company-name {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #ffffff;
+  color: rgb(30, 41, 59);
   margin-bottom: 0.5rem;
   background: linear-gradient(135deg, #784fff, #ff6464);
   -webkit-background-clip: text;
@@ -679,7 +679,7 @@
 .position-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #e0e0e0;
+  color: #475569;
 }
 
 .current-indicator {
@@ -710,7 +710,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #b0b0b0;
+  color: #64748b;
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -727,7 +727,7 @@
 .achievements-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: rgb(30, 41, 59);
   margin-bottom: 1rem;
   position: relative;
   padding-left: 15px;
@@ -778,7 +778,7 @@
 }
 
 .achievement-text {
-  color: #d0d0d0;
+  color: #64748b;
   line-height: 1.6;
   font-size: 0.95rem;
 }

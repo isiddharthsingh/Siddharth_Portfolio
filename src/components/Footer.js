@@ -8,8 +8,6 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
   return (
     <Container fluid className="footer">
       <Row>
@@ -17,7 +15,7 @@ function Footer() {
           <h3>Developed by Siddharth Singh</h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} SS</h3>
+          <h3>Copyright © 2023 SS</h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
