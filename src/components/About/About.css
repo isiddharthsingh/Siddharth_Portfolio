@@ -620,15 +620,15 @@
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  background: linear-gradient(135deg, #784fff, #ff6464);
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
   border-radius: 50%;
-  border: 3px solid rgba(12, 12, 12, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.9);
   z-index: 2;
 }
 
 .experience-card.current-role::before {
   animation: pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(120, 79, 255, 0.6);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
 }
 
 @keyframes pulse {
@@ -646,8 +646,8 @@
 }
 
 .current-role {
-  border-color: rgba(120, 79, 255, 0.4);
-  background: rgba(120, 79, 255, 0.05);
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.05);
 }
 
 .experience-header {
@@ -683,7 +683,7 @@
 }
 
 .current-indicator {
-  background: linear-gradient(135deg, #784fff, #ff6464);
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -695,8 +695,8 @@
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 10px rgba(120, 79, 255, 0.5); }
-  to { box-shadow: 0 0 20px rgba(255, 100, 150, 0.5); }
+  from { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+  to { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
 }
 
 .experience-meta {
